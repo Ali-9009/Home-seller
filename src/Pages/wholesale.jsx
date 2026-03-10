@@ -61,7 +61,7 @@ export default function Wholesale() {
 
             </section>
 
-            <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-16 px-6">
+            <section className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-16 px-6">
 
                 <div>
                     <h2 className="text-[30px] md:text-[45px] font-medium leading-tight">

@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop"; // <-- import here
+
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Agent from "./Pages/Agent";
@@ -15,15 +17,17 @@ function App() {
         <>
             <Header />
 
-            <main className="">
+            <ScrollToTop /> {/* <-- Add this here */}
+
+            <main>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/agent" element={<Agent />} />
-                    <Route path="/commercial" element={<Commercial />} />
-                    <Route path="/investor" element={<Investor />} />
-                    <Route path="/wholesale" element={<Wholesale />} />
-                    <Route path="/Contact" element={<Contact />} />
+                    <Route path="/About" element={<About />} />
+                    <Route path="/Agent" element={<Agent />} />
+                    <Route path="/Commercial" element={<Commercial />} />
+                    <Route path="/Investor" element={<Investor />} />
+                    <Route path="/Wholesale" element={<Wholesale />} />
+                    <Route path="/Contact" element={<Contact />} /> {/* make sure path lowercase */}
                 </Routes>
             </main>
 
