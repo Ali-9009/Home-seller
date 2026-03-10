@@ -173,9 +173,11 @@ export default function Agent() {
                     </div>
 
                     <Button
-                        className="mt-8"
+                        className="mt-4"
                         text="Join Our Team"
-                        onClick={() => navigate("/")}
+                        onClick={() => {
+                            navigate("/agent#join");
+                        }}
                     />
                 </div>
 
@@ -189,7 +191,7 @@ export default function Agent() {
 
             </section>
 
-            <section className="md:py-16 pb-12 flex justify-center">
+            <section id="join" className="md:py-16 pb-12 flex justify-center">
                 <div className="max-w-4xl w-full text-center px-4">
 
                     <h2 className="text-[30px] md:text-[45px] font-medium leading-tight">

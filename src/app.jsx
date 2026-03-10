@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
+import ScrollToHash from "./components/ScrollToHash";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop"; // <-- import here
@@ -15,9 +17,10 @@ import Contact from "./Pages/Contact";
 function App() {
     return (
         <>
-            <Header />
+            <ScrollToTop />
+            <ScrollToHash />
 
-            <ScrollToTop /> {/* <-- Add this here */}
+            <Header />
 
             <main>
                 <Routes>
@@ -27,7 +30,7 @@ function App() {
                     <Route path="/Commercial" element={<Commercial />} />
                     <Route path="/Investor" element={<Investor />} />
                     <Route path="/Wholesale" element={<Wholesale />} />
-                    <Route path="/Contact" element={<Contact />} /> {/* make sure path lowercase */}
+                    <Route path="/Contact" element={<Contact />} />
                 </Routes>
             </main>
 

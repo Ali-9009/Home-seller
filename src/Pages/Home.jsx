@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
 export default function Home() {
@@ -28,11 +28,22 @@ export default function Home() {
                                 We provide the resources, infrastructure, and professional environment that allow agents and investors to focus on what matters most closing deals.
                             </p>
 
-                            <Button
-                                className="mt-4"
-                                text="Apply For Hard Money"
-                                onClick={() => navigate("/form")}
-                            />
+                            <div className="space-x-4">
+                                <Button
+                                    className="mt-4"
+                                    text="Join Our Team"
+                                    onClick={() => {
+                                        navigate("/agent#join");
+                                    }}
+                                />
+
+                                <Button
+                                    className="mt-4"
+                                    text="Contact Us"
+                                    onClick={() => navigate("/contact")}
+                                />
+                            </div>
+
                         </div>
 
                         <div className=" relative py-6 px-4 sm:p-8 rounded-[12px] bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg shadow-white/10">
@@ -159,7 +170,7 @@ export default function Home() {
                     <Button
                         className="mt-6 self-start"
                         text="About Us"
-                        onClick={() => navigate("/form")}
+                        onClick={() => navigate("/about")}
                     />
                 </div>
 

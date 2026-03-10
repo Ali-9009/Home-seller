@@ -47,9 +47,11 @@ export default function About() {
                     </p>
 
                     <Button
-                        className="mt-8"
+                        className="mt-4"
                         text="Join Our Team"
-                        onClick={() => navigate("/")}
+                        onClick={() => {
+                            navigate("/agent#join");
+                        }}
                     />
                 </div>
 
