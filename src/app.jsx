@@ -5,6 +5,8 @@ import ScrollToHash from "./components/ScrollToHash";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop"; // <-- import here
+import Form2 from "./components/Form2";
+
 
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -31,6 +33,7 @@ function App() {
                     <Route path="/Investor" element={<Investor />} />
                     <Route path="/Wholesale" element={<Wholesale />} />
                     <Route path="/Contact" element={<Contact />} />
+                    <Route path="/Form2" element={<Form2 />} />
                 </Routes>
             </main>
 

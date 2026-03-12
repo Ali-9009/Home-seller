@@ -4,7 +4,7 @@ export default function Contact() {
 
         <main className="max-w-[1440px] mx-auto">
 
-            <section className="py-16 flex justify-center">
+            <section className="py-12 flex justify-center">
                 <div className="max-w-6xl w-full px-6 grid md:grid-cols-2 gap-12 items-start">
 
                     {/* Left Side */}

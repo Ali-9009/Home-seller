@@ -83,7 +83,7 @@ export default function Investor() {
                     <Button
                         className="mt-8"
                         text="Apply for Wholesaler Access"
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/form2")}
                     />
 
                 </div>
@@ -99,16 +99,16 @@ export default function Investor() {
             </section>
 
             <section className="py-16 flex justify-center">
-                <div className="text-center px-4">
+                <div className="text-left md:text-center px-4">
 
                     <h2 className="text-[30px] md:text-[45px] font-medium leading-tight">
-                        Wholesale & Investment  { }
+                        Wholesale & Investment{" "}
                         <span className="text-(--secondary-color)">
-                           Opportunities.
+                            Opportunities.
                         </span>
                     </h2>
 
-                    <p className="mt-4 max-w-3xl mx-auto text-lg font-medium text-(--text-color)">
+                    <p className="mt-4 max-w-3xl md:mx-auto text-lg font-medium text-(--text-color)">
                         HomeSellers Real Estate Group maintains relationships with investors and wholesalers sourcing off-market real estate opportunities.
                     </p>
 
@@ -116,8 +116,8 @@ export default function Investor() {
                         These opportunities may include properties suitable for:
                     </p>
 
-                    <div className="grid md:grid-cols-3 gap-4 mt-6 text-(--text-color)">
-                        <div className="border border-(--secondary-color)  rounded-lg py-4">
+                    <div className="grid md:grid-cols-3 gap-4 mt-6 text-center text-(--text-color)">
+                        <div className="border border-(--secondary-color) rounded-lg py-4">
                             Fix and flip projects
                         </div>
 

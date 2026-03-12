@@ -8,13 +8,13 @@ export default function Wholesale() {
 
         <main className="max-w-[1440px] mx-auto">
 
-            <section className="grid grid-cols-1 items-center gap-12 md:py-16 py-8 px-6 text-center">
+            <section className="grid grid-cols-1 items-center gap-12 md:py-16 py-8 px-6 text-left md:text-center">
 
                 {/* Content */}
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-start md:items-center">
 
                     <h2 className="text-[30px] md:text-[45px] font-medium leading-tight">
-                        Wholesale &  { }
+                        Wholesale &{" "}
                         <span className="text-(--secondary-color)">
                             Investment Opportunities.
                         </span>
@@ -28,7 +28,7 @@ export default function Wholesale() {
                         These opportunities may include properties suitable for:
                     </p>
 
-                    <div className="flex flex-col md:flex-row mt-8 items-center justify-center gap-6">
+                    <div className="flex flex-col md:flex-row mt-8 items-start md:items-center justify-start md:justify-center gap-6">
 
                         <div className="flex items-center gap-2">
                             <img src="assets/mark.png" alt="" className="w-6 h-6" />
