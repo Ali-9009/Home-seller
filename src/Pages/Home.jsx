@@ -1,254 +1,214 @@
+    import { Building2, BadgeDollarSign, Handshake, User, Users, Heart, ChevronRight, Tag, ShoppingBag } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import Footer from "../components/Footer";
 
 export default function Home() {
     const navigate = useNavigate();
     return (
 
-        <main className="max-w-[1440px] mx-auto">
+        <>
+            <section className="relative bg-[url('/assets/h-bg.png')] bg-cover bg-top bg-no-repeat">
+                <div className="relative max-w-7xl h-[600px] mx-auto px-6 py-20">
 
-            <section className="px-2 mt-12 my-4">
-                <div className="relative rounded-2xl px-4 py-4 sm:p-10 md:p-16 lg:p-20 text-white 
-                bg-gradient-to-r from-[#C1DEE8] to-[#FBD9B9] 
-                before:absolute before:inset-0 before:bg-white/20 before:rounded-2xl before:pointer-events-none 
-                backdrop-blur-md">
+                    <div className="flex flex-col items-center justify-between h-full">
 
-                    <div className="grid grid-cols-1 lg:grid-cols-[50%_45%] gap-6 text-(--text-color) items-center">
+                        {/* BUTTONS (TOP) */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button
+                                text={
+                                    <span className="flex items-center gap-2">
+                                        <ShoppingBag size={18} />
+                                        <span>Buy a Property</span>
+                                        <ChevronRight size={18} />
+                                    </span>
+                                }
+                            />
 
-                        <div>
-                            <h2 className="md:text-[45px] text-[30px] font-medium ">
-                                HomeSellers Real Estate Group. <span className="text-(--secondary-color)"> Licensed Florida Real Estate </span> Brokerage.
+                            <Button
+                                text={
+                                    <span className="flex items-center gap-2">
+                                        <Tag size={18} />
+                                        <span>Sell Your Property</span>
+                                        <ChevronRight size={18} />
+                                    </span>
+                                }
+                            />
+                        </div>
+
+                        {/* CONTENT (BOTTOM) */}
+                        <div className="text-center max-w-2xl">
+                            <h2 className="md:text-[55px] text-[30px] font-bold leading-tight 
+  [text-shadow:0_2px_10px_rgba(255,255,255,0.9),0_0_20px_rgba(255,255,255,0.7)]">
+                                Miami Real Estate Done Right
                             </h2>
 
-                            <p className="mt-4 text-lg">
-                                A brokerage built for real estate professionals who want to grow their business and operate in today’s evolving real estate market.
-                            </p>
+                            <div className="flex items-center justify-center gap-3 mt-4 text-sm flex-wrap">
+                                <span>Residential</span>
+                                <img src="/assets/Ellipse.png" alt="" className="w-2 h-2" />
 
-                            <p className="mt-4 text-lg">
-                                We provide the resources, infrastructure, and professional environment that allow agents and investors to focus on what matters most closing deals.
-                            </p>
+                                <span>Commercial</span>
+                                <img src="/assets/Ellipse.png" alt="" className="w-2 h-2" />
 
-                            <div className="space-x-4">
-                                <Button
-                                    className="mt-4"
-                                    text="Join Our Team"
-                                    onClick={() => {
-                                        navigate("/agent#join");
-                                    }}
-                                />
-
-                                <Button
-                                    className="mt-4"
-                                    text="Contact Us"
-                                    onClick={() => navigate("/contact")}
-                                />
+                                <span>Investment Real Estate</span>
                             </div>
 
-                        </div>
-
-                        <div className=" relative py-6 px-4 sm:p-8 rounded-[12px] bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg shadow-white/10">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl text-center mb-6 text-(--text-color)">
-                                Want to buy or sell now?
-                            </h3>
-
-                            <form className="space-y-4">
-                                {/* Row 1: First Name + Last Name */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <input
-                                        type="text"
-                                        placeholder="First Name"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Last Name"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                    />
-                                </div>
-
-                                {/* Row 2: Email + Phone */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <input
-                                        type="email"
-                                        placeholder="Email"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                    />
-                                    <input
-                                        type="tel"
-                                        placeholder="Phone"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                    />
-                                </div>
-
-                                {/* Property */}
-                                <input
-                                    type="text"
-                                    placeholder="Property"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                />
-
-                                {/* Row 3: City + State + Zip */}
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                    <input
-                                        type="text"
-                                        placeholder="City"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                    />
-                                    <select className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900">
-                                        <option>State</option>
-                                        <option>Florida</option>
-                                        <option>California</option>
-                                        <option>Texas</option>
-                                    </select>
-                                    <input
-                                        type="text"
-                                        placeholder="Zip Code"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                    />
-                                </div>
-
-                                {/* Notes */}
-                                <textarea
-                                    placeholder="Notes"
-                                    rows="4"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-400 bg-white text-gray-900"
-                                ></textarea>
-
-                                {/* Submit Button */}
-                                <div className="pt-4 flex justify-center">
-                                    <button
-                                        type="submit"
-                                        className="px-8 py-4 rounded-full border border-[#BEBEBE] bg-[#FEFEFF] text-[#272727] hover:bg-[#272727] hover:text-white transition-all duration-300"
-                                    >
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
+                            <p className="mt-4 text-lg">
+                                Helping buyers, sellers and investors navigate the South Florida market.
+                            </p>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 py-10 px-5 md:px-10 lg:px-20">
+            <main className="bg-[url('/assets/all-bg.jpg')] bg-cover bg-top bg-no-repeat">
 
-                {/* Image */}
-                <div className="right-img order-1 lg:order-1 flex items-center justify-center">
-                    <img
-                        src="./assets/sec-1.jpg"
-                        alt="image"
-                        className=""
-                    />
-                </div>
+                <section className="py-8 md:py-16">
 
-                {/* Content */}
-                <div className="order-2 lg:order-2 flex flex-col justify-center">
-                    <h2 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[45px] font-medium leading-snug">
-                        About HomeSellers
-                        <span className="text-(--secondary-color)"> <br /> Real Estate </span>
-                        Group.
-                    </h2>
+                    <div className="max-w-6xl mx-auto px-6 text-center">
 
-                    <p className="mt-4 text-base sm:text-lg md:text-lg">
-                        HomeSellers Real Estate Group is a licensed Florida real estate brokerage
-                        serving professionals and clients across residential, commercial, and
-                        investment real estate.
-                    </p>
+                        {/* HEADING */}
+                        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-14">
+                            Why Agents Join HomeSellers
+                        </h2>
 
-                    <p className="mt-4 text-base sm:text-lg md:text-lg">
-                        Our brokerage was designed to support the way modern real estate
-                        professionals operate. Many agents today work with a mix of traditional
-                        transactions and investment opportunities.
-                    </p>
+                        {/* GRID */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 items-start">
 
-                    <p className="mt-4 text-base sm:text-lg md:text-lg">
-                        By combining the structure of a professional brokerage with strong
-                        relationships in the investment community, we provide a platform that
-                        supports a wide range of real estate transactions.
-                    </p>
+                            {/* ITEM 1 */}
+                            <div className="flex flex-col md:border-r items-center text-center px-4">
+                                <Building2 className="text-(--secondary-color) mb-4" size={36} />
 
-                    <Button
-                        className="mt-6 self-start"
-                        text="About Us"
-                        onClick={() => navigate("/about")}
-                    />
-                </div>
+                                <h3 className="font-semibold text-gray-800 mb-2">
+                                    Residential & Commercial Real Estate
+                                </h3>
 
-            </section>
-
-            <section className="py-8 md:py-16 ">
-                <div className="max-w-6xl mx-auto px-6">
-
-                    {/* Title */}
-                    <h2 className="text-center text-[30px] md:text-[45px] font-medium mb-4 md:mb-8">
-                        Why Agents Join{" "}
-                        <span className="text-(--secondary-color)">HomeSellers</span>
-                    </h2>
-
-                    {/* Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-
-                        {/* Card 1 */}
-                        <div className="bg-(--primary-color) border border-[#DADADA] rounded-xl p-6 text-center md:col-span-2">
-                            <div className="flex justify-center mb-4">
-                                <img src="assets/i-1.png" className="" />
+                                <p className="text-sm text-gray-600 leading-relaxed max-w-xs">
+                                    Agents retain most of their earnings while working under a professional brokerage.
+                                </p>
                             </div>
-                            <h3 className="font-semibold mb-2">100% Commission</h3>
-                            <p className="text-gray-600 text-sm">
-                                Agents keep the majority of what they earn while operating under a professional brokerage.
-                            </p>
-                        </div>
 
-                        {/* Card 2 */}
-                        <div className="bg-(--primary-color) border border-[#DADADA] rounded-xl p-6 text-center md:col-span-2">
-                            <div className="flex justify-center mb-4">
-                                <img src="assets/i-2.png" className="" />
+                            {/* DIVIDER */}
+                            <div className="hidden md:block absolute left-1/3 top-[120px] h-[120px] w-px bg-gray-400 opacity-40"></div>
+
+                            {/* ITEM 2 */}
+                            <div className="flex flex-col md:border-r items-center text-center px-4">
+                                <BadgeDollarSign className="text-(--secondary-color) mb-4" size={36} />
+
+                                <h3 className="font-semibold text-gray-800 mb-2">
+                                    Wholesale & Investment Opportunities
+                                </h3>
+
+                                <p className="text-sm text-gray-600 leading-relaxed max-w-xs">
+                                    Our brokerage generates opportunities that agents can work to build their pipeline.
+                                </p>
                             </div>
-                            <h3 className="font-semibold mb-2">Lead Opportunities</h3>
-                            <p className="text-gray-600 text-sm">
-                                Our brokerage generates opportunities that agents can work to build their pipeline.
-                            </p>
-                        </div>
 
-                        {/* Card 3 */}
-                        <div className="bg-(--primary-color) border border-[#DADADA] rounded-xl p-6 text-center md:col-span-2">
-                            <div className="flex justify-center mb-4">
-                                <img src="assets/i-3.png" className="" />
+                            {/* DIVIDER */}
+                            <div className="hidden md:block absolute left-2/3 top-[120px] h-[120px] w-px bg-gray-400 opacity-40"></div>
+
+                            {/* ITEM 3 */}
+                            <div className="flex flex-col items-center text-center px-4">
+                                <Handshake className="text-(--secondary-color) mb-4" size={36} />
+
+                                <h3 className="font-semibold text-gray-800 mb-2">
+                                    Off Market Deals
+                                </h3>
+
+                                <p className="text-sm text-gray-600 leading-relaxed max-w-xs">
+                                    Agents gain access to networks of investors, buyers, developers seeking opportunities.
+                                </p>
                             </div>
-                            <h3 className="font-semibold mb-2">Investor & Cash Buyer Network</h3>
-                            <p className="text-gray-600 text-sm">
-                                Agents have access to relationships with investors, cash buyers, and developers looking for opportunities.
-                            </p>
-                        </div>
 
-                        {/* Card 4 */}
-                        <div className="bg-(--primary-color) border border-[#DADADA] rounded-xl p-6 text-center md:col-span-2 md:col-start-2">
-                            <div className="flex justify-center mb-4">
-                                <img src="assets/i-4.png" className="" />
-                            </div>
-                            <h3 className="font-semibold mb-2">Legal and Title Support</h3>
-                            <p className="text-gray-600 text-sm">
-                                Our brokerage works closely with real estate attorneys and an attorney-operated title company.
-                            </p>
                         </div>
-
-                        {/* Card 5 */}
-                        <div className="bg-(--primary-color) border border-[#DADADA] rounded-xl p-6 text-center md:col-span-2">
-                            <div className="flex justify-center mb-4">
-                                <img src="assets/i-5.png" className="" />
-                            </div>
-                            <h3 className="font-semibold mb-2">Professional Team Environment</h3>
-                            <p className="text-gray-600 text-sm">
-                                Agents work alongside professionals who understand traditional real estate as well as investment transactions.
-                            </p>
-                        </div>
-
                     </div>
+                </section>
 
-                </div>
-            </section>
+                <section className="py-8 md:pb-16">
+                    <div className="max-w-7xl mx-auto">
+                        <h2 className="text-2xl md:text-3xl text-center font-semibold text-gray-800 mb-10">
+                            Why Work With HomeSellers
+                        </h2>
+                    </div>
+                   
+                    <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div className="space-y-8">
 
-        </main>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-14 h-14 flex items-center justify-center rounded-full border border-[#8B6B3E]">
+                                        <User className="text-(--secondary-color)" size={28} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800">Expertise</h4>
+                                        <p className="text-sm text-gray-600">
+                                            Years of local market experience
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="w-14 h-14 flex items-center justify-center rounded-full border border-[#8B6B3E]">
+                                        <Handshake className="text-(--secondary-color)" size={28} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800">Off-Market Deals</h4>
+                                        <p className="text-sm text-gray-600">
+                                            Access exclusive real estate opportunities
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="w-14 h-14 flex items-center justify-center rounded-full border border-[#8B6B3E]">
+                                        <Users className="text-(--secondary-color)" size={28} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800">Investors</h4>
+                                        <p className="text-sm text-gray-600">
+                                            Network of ready and qualified investors
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="w-14 h-14 flex items-center justify-center rounded-full border border-[#8B6B3E]">
+                                        <Heart className="text-(--secondary-color)" size={28} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800">Full-Service</h4>
+                                        <p className="text-sm text-gray-600">
+                                            A complete route of real estate service
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button className="mt-10 px-6 h-12 rounded-lg bg-[#EAD8C0] text-gray-800 font-medium">
+                                Get In Touch
+                            </button>
+
+                        </div>
+
+                        <div className="flex justify-center lg:justify-end">
+                            <div className="w-full max-w-md">
+                                <img
+                                    src="/assets/h-1.png"
+                                    alt="Why Work With HomeSellers"
+                                    className=""
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <Footer />
+            </main>
+        </>
+
+
     )
 }
 

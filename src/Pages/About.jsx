@@ -1,21 +1,34 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
+
 export default function About() {
     const navigate = useNavigate();
+    const [imageLoaded, setImageLoaded] = useState(false);
+
     return (
 
         <main className="max-w-[1440px] mx-auto">
 
             <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 md:pb-16 py-8 px-6">
 
-                {/* Image */}
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center relative">
+
+                    {/* Skeleton (shows until image loads) */}
+                    {!imageLoaded && (
+                        <div className="w-full max-w-md lg:max-w-full h-[300px] bg-gray-300 rounded-xl animate-pulse absolute"></div>
+                    )}
+
+                    {/* Real Image */}
                     <img
                         src="./assets/about-sec-1.png"
                         alt="About HomeSellers"
-                        className="w-full max-w-md lg:max-w-full"
+                        onLoad={() => setImageLoaded(true)}
+                        className={`w-full max-w-md lg:max-w-full transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"
+                            }`}
                     />
+
                 </div>
 
                 {/* Content */}
@@ -24,26 +37,20 @@ export default function About() {
                         About HomeSellers
                         <span className="text-(--secondary-color)">
                             <br /> Real Estate
-                        </span>
-                        {" "}Group.
+                        </span>{" "}
+                        Group.
                     </h2>
 
                     <p className="mt-4 text-lg text-(--text-color)">
-                        HomeSellers Real Estate Group is a licensed Florida real estate brokerage
-                        serving professionals and clients across residential, commercial, and
-                        investment real estate.
+                        HomeSellers Real Estate Group is a licensed Florida real estate brokerage...
                     </p>
 
                     <p className="mt-4 text-lg text-(--text-color)">
-                        Our brokerage was designed to support the way modern real estate
-                        professionals operate. Many agents today work with a mix of traditional
-                        transactions and investment opportunities.
+                        Our brokerage was designed to support...
                     </p>
 
                     <p className="mt-4 text-lg text-(--text-color)">
-                        By combining the structure of a professional brokerage with strong
-                        relationships in the investment community, we provide a platform that
-                        supports a wide range of real estate transactions.
+                        By combining the structure...
                     </p>
 
                     <Button
@@ -56,6 +63,7 @@ export default function About() {
                 </div>
 
             </section>
+
 
             <section className="md:py-12 pb-8">
                 <div className="px-6 grid lg:grid-cols-2 gap-12 items-center">

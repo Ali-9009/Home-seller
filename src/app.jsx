@@ -1,11 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import ScrollToHash from "./components/ScrollToHash";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop"; // <-- import here
-import Form2 from "./components/Form2";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 import Home from "./Pages/Home";
@@ -15,8 +14,13 @@ import Commercial from "./Pages/Commercial";
 import Investor from "./Pages/Investor";
 import Wholesale from "./Pages/wholesale";
 import Contact from "./Pages/Contact";
+import Form2 from "./components/Form2";
+import Layout from "./Layout";
+
 
 function App() {
+    const location = useLocation();
+
     return (
         <>
             <ScrollToTop />
@@ -25,19 +29,21 @@ function App() {
             <Header />
 
             <main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/About" element={<About />} />
-                    <Route path="/Agent" element={<Agent />} />
-                    <Route path="/Commercial" element={<Commercial />} />
-                    <Route path="/Investor" element={<Investor />} />
-                    <Route path="/Wholesale" element={<Wholesale />} />
-                    <Route path="/Contact" element={<Contact />} />
-                    <Route path="/Form2" element={<Form2 />} />
-                </Routes>
+                <AnimatePresence mode="wait">
+                    <Routes location={location} key={location.pathname}>
+                        <Route element={<Layout />}>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/About" element={<About />} />
+                            <Route path="/Agent" element={<Agent />} />
+                            <Route path="/Commercial" element={<Commercial />} />
+                            <Route path="/Investor" element={<Investor />} />
+                            <Route path="/Wholesale" element={<Wholesale />} />
+                            <Route path="/Contact" element={<Contact />} />
+                            <Route path="/Form2" element={<Form2 />} />
+                        </Route>
+                    </Routes>
+                </AnimatePresence>
             </main>
-
-            <Footer />
         </>
     );
 }
