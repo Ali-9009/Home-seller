@@ -1,4 +1,5 @@
 import { Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 export default function Footer() {
@@ -49,17 +50,19 @@ export default function Footer() {
 
                     {/* RIGHT LOGO */}
                     <div className="flex flex-col items-center lg:items-end text-center lg:text-right">
-                        <img src="/assets/f-logo.png" className="w-36 " />
+                        <Link to="/">
+                            <img src="/assets/f-logo.png" className="w-36" />
+                        </Link> 
                     </div>
 
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm">
+                {/* <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm">
                     <a href="#" className="hover:underline">Buy Real Estate</a>
                     <a href="#" className="hover:underline">Sell Your Property</a>
                     <a href="#" className="hover:underline">Investment opportunities</a>
                     <a href="#" className="hover:underline">Wholesale Opportunities</a>
-                </div>
+                </div> */}
 
                 <div className="mt-10 border-t border-gray-400 pt-4 text-center text-sm">
                     © 2026 Copyright By Home Sellers

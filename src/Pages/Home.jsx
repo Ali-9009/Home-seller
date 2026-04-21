@@ -1,4 +1,4 @@
-    import { Building2, BadgeDollarSign, Handshake, User, Users, Heart, ChevronRight, Tag, ShoppingBag } from "lucide-react";
+import { Building2, BadgeDollarSign, Handshake, User, Users, Heart, ChevronRight, Tag, ShoppingBag } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
@@ -131,7 +131,7 @@ export default function Home() {
                             Why Work With HomeSellers
                         </h2>
                     </div>
-                   
+
                     <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <div className="space-y-8">
@@ -207,8 +207,6 @@ export default function Home() {
                 <Footer />
             </main>
         </>
-
-
     )
 }
 
